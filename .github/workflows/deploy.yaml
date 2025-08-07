@@ -1,4 +1,4 @@
-name: Terraform CI/CD
+name: VPC_Create_PROD
 
 permissions:
   id-token: write
