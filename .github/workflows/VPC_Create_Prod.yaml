@@ -32,8 +32,8 @@ jobs:
         run: printenv 
       - name: Run API check script
         run: |
-          chmod +x scripts/check-apis.sh
-          ./scripts/check-apis.sh cicd-prod-468221
+          chmod +x ./check-apis.sh
+          ./check-apis.sh cicd-prod-468221
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
