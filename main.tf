@@ -3,15 +3,6 @@
       zone      = "${var.region}-a"
     }
 
-resource "null_resource" "check_and_enable_apis" {
-  provisioner "local-exec" {
-    command = "./check-apis.sh ${var.project_id}"
-  }
-
-  triggers = {
-    always_run = "${timestamp()}"
-  }
-}
     resource  "google_compute_network" "Custom_VPC"{
         name =  "${var.name}-vpc"
         auto_create_subnetworks = false
