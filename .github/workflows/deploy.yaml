@@ -13,6 +13,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+    id-token: write
+    contents: read
 
     steps:
       - name: Checkout repo
@@ -21,13 +24,17 @@ jobs:
       - name: Auth to Google Cloud via OIDC
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: "projects/240233069147/locations/global/workloadIdentityPools/github-pool/providers/github-provider"
+          workload_identity_provider: "projects/240233069147/locations/global/workloadIdentityPools/automation-oidc-pool/providers/automation-oidc-provider"
           service_account: "terraform-SA@cicd-prod-468221.iam.gserviceaccount.com"
+          token_format: "access_token"
+          create_credentials_file: true
+      - name: authentication info display
+        run: printenv 
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
 
-      - name: Terraform Init
+      - name: Terraform Init 
         run: terraform init
 
       - name: Terraform Plan
