@@ -3,7 +3,7 @@
       zone      = "${var.region}-a"
     }
     resource  "google_compute_network" "Custom_VPC"{
-        name =  "${var.name}-VPC"
+        name =  "${var.name}-vpc"
         auto_create_subnetworks = false
 
     }
