@@ -1,0 +1,6 @@
+project_id = "cicd-prod-468221"
+region ="us-east1"
+front_cidr ="192.168.1.0/24"
+back_cidr = "192.168.2.0/24"
+DMZ_cidr = "192.168.3.0/24"
+name = "prod"

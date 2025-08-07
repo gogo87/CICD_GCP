@@ -1,0 +1,6 @@
+project_id = "cicd-dev-468221"
+region ="us-central1"
+front_cidr ="10.0.0.0/24"
+back_cidr = "11.0.0.0/24"
+DMZ_cidr = "12.0.0.0/24"
+name = "dev"
