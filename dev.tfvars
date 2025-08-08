@@ -1,4 +1,4 @@
-project_id = "cicd-dev-468221"
+project_id = "oidc-test-468417"
 region ="us-central1"
 front_cidr ="10.0.0.0/24"
 back_cidr = "11.0.0.0/24"
