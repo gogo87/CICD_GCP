@@ -1,4 +1,4 @@
-name: VPC_Create_PROD
+name: VPC_Create_Dev
 
 permissions:
   id-token: write
