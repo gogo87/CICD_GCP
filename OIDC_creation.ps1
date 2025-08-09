@@ -131,8 +131,7 @@ if ($LASTEXITCODE -ne 0) {
 
 if ($enabled -and ($enabled -contains $api)) {
     Write-Host "'$API' is already enabled on project '$PROJECT_ID'."
-    exit 0
-}
+}else{
 
 Write-Host "'$API' is NOT enabled on project '$PROJECT_ID'. Enabling now..."
 gcloud services enable $API --project $PROJECT_ID
@@ -140,6 +139,7 @@ gcloud services enable $API --project $PROJECT_ID
 if ($LASTEXITCODE -eq 0) {
     Write-Host "Enabled '$API' successfully."
     exit 0
+}
 }
 
 Write-Host "== Creating Workload Identity Pool ==" -ForegroundColor Cyan
