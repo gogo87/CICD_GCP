@@ -55,7 +55,7 @@ $PROVIDER_ID = Read-Host -Prompt "Enter PROVIDER ID"
 $GITHUB_REPO = Read-Host -Prompt "Enter GITHUB REPO ID"
 $SERVICE_ACCOUNT_NAME = Read-Host -Prompt "Enter SA Name ID"
 $PROJECT_NUMBER = (gcloud projects describe $PROJECT_ID --format="value(projectNumber)")
-$WIF_PROVIDER = "projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/$POOL_ID/providers/$PROVIDER_ID"
+#$WIF_PROVIDER = "projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/$POOL_ID/providers/$PROVIDER_ID"
 $SA_EMAIL = "$SERVICE_ACCOUNT_NAME@$PROJECT_ID.iam.gserviceaccount.com"
 $MEMBER = "principalSet://iam.googleapis.com/projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/$POOL_ID/attribute.repository/$GITHUB_REPO"
 $API = "iamcredentials.googleapis.com"
