@@ -138,7 +138,7 @@ gcloud services enable $API --project $PROJECT_ID
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "Enabled '$API' successfully."
-    exit 0
+    
 }
 }
 
@@ -157,7 +157,7 @@ gcloud iam workload-identity-pools providers create-oidc $PROVIDER_ID `
   --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository" `
   --attribute-condition="attribute.repository==assertion.repository"
 
-  Write-Host "== Creating Service Account =="
+  Write-Host "== Creating Service Account ==" -ForegroundColor Cyan
 
 gcloud iam service-accounts create $SERVICE_ACCOUNT_NAME `
   --project $PROJECT_ID `
