@@ -24,8 +24,8 @@ jobs:
       - name: Auth to Google Cloud via OIDC
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: "projects/833211051492/locations/global/workloadIdentityPools/oidc-pool/providers/oidc-provider"
-          service_account: "oidc-sa@oidc-test-468417.iam.gserviceaccount.com"
+          workload_identity_provider: "projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/<POOL_ID>/providers/<PROVIDER_ID>" # add the new values
+          service_account: "<SERVICE_ACCOUNT_EMAIL>"  ### Add the newley created Service account
           token_format: "access_token"
           create_credentials_file: true
       - name: authentication info display
@@ -55,7 +55,3 @@ jobs:
         run: terraform plan -var-file=dev.tfvars
       - name: Terraform apply
         run: terraform apply -var-file=dev.tfvars -auto-approve       
-
-      # Optional:
-      # - name: Terraform Apply
-      #   run: terraform apply -auto-approve
