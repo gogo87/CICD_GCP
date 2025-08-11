@@ -26,8 +26,8 @@ jobs:
       - name: Auth to Google Cloud via OIDC
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: "projects/940671408487/locations/global/workloadIdentityPools/cicd-dev-pool/providers/cicd-dev-provider" # add the new values
-          service_account: "cicd-dev-sa@cicd-dev-468511.iam.gserviceaccount.com"  ### Add the newley created Service account
+          workload_identity_provider: "<WIF_provider path>" # add the new values
+          service_account: "<Service Account>"  ### Add the newley created Service account
           token_format: "access_token"
           create_credentials_file: true
       - name: authentication info display
